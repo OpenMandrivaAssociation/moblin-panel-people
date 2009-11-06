@@ -1,12 +1,17 @@
 Name: moblin-panel-people
 Summary: People panel for Moblin
 Group: Graphical desktop/Other 
-Version: 0.0.8
+Version: 0.0.10
 License: LGPL 2.1
 URL: http://www.moblin.org
 Release: %mkrel 1
-Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
+Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-0.0.8.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+
+# this patch is necessary because developers didn't create a proper
+# version tag for this moblin-2.1 release, they've also updated some
+# .po files after 0.0.10 (remove this patch when the next tag is ok)
+Patch0: moblin-panel-people-0.0.8-to-0.0.10.patch
 
 BuildRequires: anerley-devel
 BuildRequires: gtk2-devel
@@ -20,7 +25,8 @@ BuildRequires: gnome-common
 Moblin people panel for Moblin
 
 %prep
-%setup -q 
+%setup -q -n %{name}-0.0.8
+%patch0 -p1
 
 %build
 NOCONFIGURE=nil ./autogen.sh
