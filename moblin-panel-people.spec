@@ -20,6 +20,8 @@ BuildRequires: moblin-panel-devel
 BuildRequires: intltool
 BuildRequires: gettext
 BuildRequires: gnome-common
+#gw it is in a libtool archive:
+BuildRequires: libbonobo2_x-devel
 
 %description
 Moblin people panel for Moblin
