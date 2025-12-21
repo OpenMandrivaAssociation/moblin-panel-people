@@ -13,6 +13,11 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 # .po files after 0.0.10 (remove this patch when the next tag is ok)
 Patch0: moblin-panel-people-0.0.8-to-0.0.10.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: anerley-devel
 BuildRequires: gtk2-devel
 BuildRequires: nbtk-devel
